@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="pl">
 <head>
@@ -15,22 +16,68 @@
       min-height: 100vh;
       display: grid;
       place-items: center;
-      background: #0b0b0f;
+      background:
+        radial-gradient(circle at top, #24242c 0%, #0b0b0f 45%, #050507 100%);
       color: white;
       font-family: Arial, Helvetica, sans-serif;
     }
 
     h1 {
       margin: 0;
+      padding: 20px;
       font-size: clamp(2.5rem, 9vw, 7rem);
       text-align: center;
       letter-spacing: -0.04em;
       text-shadow: 0 0 30px rgba(255,255,255,.25);
     }
+
+    .player {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: min(420px, calc(100% - 30px));
+      padding: 18px 20px;
+
+      background: rgba(25, 25, 30, 0.92);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      box-shadow: 0 10px 40px rgba(0,0,0,.45);
+
+      text-align: center;
+    }
+
+    .player-title {
+      margin-bottom: 10px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    audio {
+      width: 100%;
+      height: 40px;
+    }
   </style>
 </head>
 
 <body>
+
   <h1>pozdro belmondziak i kaz</h1>
+
+  <div class="player">
+    <div class="player-title">🎵 Muzyka</div>
+
+    <audio controls>
+      <source src="muzyka.mp3" type="audio/mpeg">
+      Twoja przeglądarka nie obsługuje odtwarzacza audio.
+    </audio>
+  </div>
+
 </body>
 </html>
+```
